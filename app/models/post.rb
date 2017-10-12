@@ -21,6 +21,6 @@ class Post < ApplicationRecord
   end
 
   def comment_count
-   Comment.where(post_id:self).size
+    Comment.where(post_id:self).size
   end
 end

@@ -4,8 +4,11 @@
 <% end %>
 
 <table>
+  <% count = ((@page.to_i - 1)*@posts_per_page) %>
   <% @posts.each do |post| %>
     <tr>
+    <% count += 1 %>
+      <td class="post_count"><%= count %></td>
       <td class="h3"><%= post.score_total %></td>
       <td>
         <div class="vote">
