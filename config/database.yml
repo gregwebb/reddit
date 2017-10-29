@@ -22,7 +22,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: reddit
+  database: reddit_test
   pool: 5
 
 production:

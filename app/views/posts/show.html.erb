@@ -1,6 +1,10 @@
 <%="submitted #{time_ago_in_words(@post.created_at)} ago"%>
-<%= "by "%><%= link_to @post.user.username, controller: "users", action: "show", id: @post.user %>
-
+<%= "by "%>
+<% if @post.user.nil? %>
+<%= "[deleted]" %>
+<% else %>
+<%= link_to @post.user.username, controller: "users", action: "show", id: @post.user %>
+<% end %>
 
 <p>
   <% if @post.try(:url) %>
@@ -18,7 +22,7 @@
 
 <% if current_user == @post.user %>
   <%= link_to 'Destroy', post_path(@post),
-                method: :delete,
+                method: :patch,
                 data: { confirm: 'Are you sure?' } %>
 <% end %>
 
