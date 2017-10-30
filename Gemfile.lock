@@ -116,6 +116,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+=======
+>>>>>>> 291da0e8d95af712383909bd3e1b5b5438cd5a56
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)

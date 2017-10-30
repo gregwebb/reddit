@@ -31,6 +31,11 @@ class CommentsController < ApplicationController
     @comment.destroy
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(body: "deleted", user_id: nil)
+  end
+
   private
     def authenticate_logged_in
       unless current_user

@@ -1,8 +1,14 @@
 <li>
+ <% if comment.user.nil? %>
+ <%= "[deleted]" %> <%= time_ago_in_words(comment.created_at) %> <%= "ago" %>
+ <% else %>
    <%= link_to comment.user.username, controller: "users", action: "show", id: comment.user %> <%= comment.score_total %> points <%= time_ago_in_words(comment.created_at) %> ago
+<% end %>
+
     <br>
     <%= comment.body %>
-
+ <% if comment.user.nil? %>
+ <% else %>
     <div class="reply-button">reply</div>
     <div class="reply-form">
       <%= form_for [comment, Comment.new] do |f| %>
@@ -10,6 +16,12 @@
         <%= f.submit "save" %>
       <% end %>
     </div>
+    <% if current_user == comment.user %>
+      <%= link_to 'Destroy', comment_path(comment.id),
+                    controller: :comments,
+                    method: :patch,
+                    data: { confirm: 'Are you sure?' } %>
+    <% end %>
     <div class="vote">
       <%= form_for Vote.new do |f| %>
         <%= f.hidden_field "parent_type", :value => Comment %>
@@ -35,5 +47,6 @@
         <% end %>
       <% end %>
    </div>
+   <% end %>
     <ul><%= render partial: 'comments/comment', collection: comment.comments.sort_by{|p| p.score_total}.reverse %></ul>
 </li>
