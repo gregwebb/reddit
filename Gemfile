@@ -51,6 +51,7 @@ group :test do
   gem 'guard-rspec'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'elasticsearch-extensions'
 end
 
 group :development do
