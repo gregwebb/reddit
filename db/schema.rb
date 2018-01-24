@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180122074259) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "upvotes"
     t.bigint "post_id"
     t.index ["parent_type", "parent_id"], name: "index_comments_on_parent_type_and_parent_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
