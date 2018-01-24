@@ -318,7 +318,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   link_thumbnailer
-  listen
+  listen (~> 3.1.5)
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.2)
