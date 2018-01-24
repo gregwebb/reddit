@@ -3,7 +3,7 @@
 
 set :application, "reddit"
 set :repo_url, "git@github.com:gregwebb/reddit.git"
-set :deploy_to, '/home/deploy/reddit2'
+set :deploy_to, '/home/deploy/reddit'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
