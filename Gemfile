@@ -29,19 +29,25 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'pg'
+gem 'pg', '~> 0.18'
 gem 'bootstrap-sass', '3.3.6'
 gem 'jquery-rails'
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-rails', '~> 1.2'
 gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'link_thumbnailer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot_rails'
+  gem 'elasticsearch-model'
+  gem 'elasticsearch-rails'
+  gem 'link_thumbnailer'
 end
 
 group :test do
